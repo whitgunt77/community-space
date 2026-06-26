@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --forest: #2D6A4F;
+    --moss: #52B788;
+    --sand: #F4ECD8;
+    --ember: #E76F51;
+    --night: #1A1D1E;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--sand);
+    font-family: var(--font-body);
+    color: var(--night);
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(45,106,79,.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(231,111,81,.05) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+  .btn:focus { outline: none; }
+  .btn:focus-visible { ring: 2px solid; ring-offset: 2px; }
+
+  .btn-primary {
+    background-color: var(--forest);
+    color: var(--sand);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  .btn-primary:hover { background-color: #1b4332; shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+  .btn-primary:focus-visible { ring-color: var(--forest); }
+  .btn-primary:active { transform: scale(0.98); }
+
+  .btn-secondary {
+    background-color: #e5dcc6; /* Representing sand-dark */
+    color: var(--forest);
+    border: 1px solid rgba(45, 106, 79, 0.2);
+  }
+  .btn-secondary:hover { border-color: rgba(45, 106, 79, 0.5); background-color: var(--sand); }
+  .btn-secondary:focus-visible { ring-color: var(--forest); }
+
+  .btn-ember {
+    background-color: var(--ember);
+    color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  .btn-ember:hover { background-color: #c95032; shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+  .btn-ember:focus-visible { ring-color: var(--ember); }
+  .btn-ember:active { transform: scale(0.98); }
+
+  .btn-ghost {
+    color: rgba(45, 106, 79, 0.7);
+  }
+  .btn-ghost:hover { color: var(--forest); background-color: rgba(45, 106, 79, 0.08); }
+  .btn-ghost:focus-visible { ring-color: var(--forest); }
+
+  .btn-icon { padding: 0.5rem; border-radius: 9999px; }
+
+  /* ── Cards ── */
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    border: 1px solid #e5dcc6;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
+  }
+  .card-hover:hover { shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); transform: translateY(-2px); }
+
+  /* ── Inputs ── */
+  .input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #e5dcc6;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--night);
+    transition: border-color 0.15s, ring 0.15s;
+  }
+  .input::placeholder { color: rgba(26, 29, 30, 0.4); }
+  .input:focus { outline: none; border-color: var(--forest); ring: 2px solid rgba(45, 106, 79, 0.2); }
+
+  .label { display: block; font-size: 0.75rem; font-weight: 500; color: rgba(26, 29, 30, 0.6); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ── Badges ── */
+  .badge { display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 9999px; padding: 0.125rem 0.625rem; font-size: 0.75rem; font-weight: 500; }
+  .badge-category { background-color: rgba(82, 183, 136, 0.15); color: var(--forest); }
+
+  /* ── Leaflet overrides ── */
+  .leaflet-container { font-family: var(--font-body); border-radius: 1rem; }
+  .leaflet-popup-content-wrapper {
+    border-radius: 0.75rem !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(244, 236, 216, 0.8) !important;
+    background: rgba(255,255,255,0.96) !important;
+    backdrop-filter: blur(8px);
+  }
+  .leaflet-popup-tip { background: white !important; }
+  .leaflet-control-zoom a { font-family: var(--font-body) !important; }
+}
