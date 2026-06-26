@@ -13,6 +13,7 @@ A full-stack **Virtual Community Space** application — discover and create loc
 
 ## Project Structure
 
+```
 community-space/
 ├── client/                     # React frontend
 │   ├── src/
@@ -55,6 +56,7 @@ community-space/
     ├── routes/
     │   └── api.js              # All routes with validation
     └── server.js               # Express entry point
+```
 
 ---
 
