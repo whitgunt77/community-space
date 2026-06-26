@@ -2,20 +2,17 @@
 
 A full-stack **Virtual Community Space** application — discover and create local events on an interactive map.
 
-```
 | Layer      | Stack                                                   |
 |------------|---------------------------------------------------------|
 | Frontend   | React 18+Vite+Tailwind CSS+React-Leaflet+TanStack Query |
 | Backend    | Node.js + Express                                       |
 | Database   | PostgreSQL (with optional PostGIS for spatial queries)  |
 | Auth       | JWT (Bearer token)                                      |
-```
 
 ---
 
 ## Project Structure
 
-```
 community-space/
 ├── client/                     # React frontend
 │   ├── src/
@@ -58,7 +55,6 @@ community-space/
     ├── routes/
     │   └── api.js              # All routes with validation
     └── server.js               # Express entry point
-```
 
 ---
 
@@ -93,14 +89,12 @@ npm run dev      # starts on http://localhost:5000
 
 **Required `.env` values:**
 
-```
 | Variable
 |
 | `DATABASE_URL` | `postgresql://postgres:pw@localhost/community_space`|
 | `JWT_SECRET`   | `node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"` |
 | `PORT`         | `5000`                                              |
 | `CLIENT_ORIGIN | `http://localhost:5173`                             |
-```
 
 ### 4. Client
 
